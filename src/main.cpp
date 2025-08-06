@@ -32,6 +32,7 @@ int main(){
 /*
 main game
   gets random word from word.txt file
+  compares the strings
 */
 
 // random number gen + get random word from file
