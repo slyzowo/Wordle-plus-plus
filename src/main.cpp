@@ -20,7 +20,7 @@ int chanceSelector(){
 return chanceCount;
 }
 
-int characterSelector(){
+int wordLengthSelector(){
   cout << "how many characters would you like in your word?" << '\n' << "[ 0 for default ]" << '\n';
   cin >> characterCount;
   if (characterCount == 0){
@@ -34,7 +34,7 @@ int main(){
   std::string randword = "";
 
   startseq();
-  characterSelector();
+  wordLengthSelector();
   chanceSelector();
 
 /*
