@@ -31,37 +31,41 @@ return characterCount;
 
 int main(){
   std::string userGuess = "";
-  std::string randword = "";
+  std::string secretWord = "";
 
   startseq();
   wordLengthSelector();
   chanceSelector();
 
-/*
-main game
-  gets random word from word.txt file
-  compares the strings
-*/
+  std::ifstream wordlistFile("wordlist.txt");
+
+// random number + forloop for line
+
+  while (getline(wordlistFile, secretWord)){
+    cout << "Secret Word : " << secretWord << '\n';
+  }
 
 // random number gen + get random word from file
 
-for (int i = chanceCount; i >= 0; i--){
+  for (int i = chanceCount; i >= 0; i--){
 // main gameplay with a multidimensional array
 
   cout << "Chances to guess : " << i << '\n';
   cin >> userGuess;
 
-// compare secret word to users word and return results
+  if (i == 0){
+    cout << "Game Over!"<< '\n';
+  }
 
+  else if(userGuess != secretWord){
+    continue;
+  }
+
+  else if (userGuess == secretWord){
+    cout << "You Win!"<< '\n';
+    break;
+  }
 }
-
-cout << "Game Over!"<< '\n';
-
-
-/*
-"death" seq
-  ends game, asks to play again
-*/
 
 return 0;
 }
