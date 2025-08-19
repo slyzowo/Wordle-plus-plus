@@ -53,7 +53,7 @@ int main(){
 // main gameplay with a multidimensional array
 
   cout << "Chances to guess : " << i << '\n';
-  cout << secretWord << '\n';
+  cout << "DEBUG secret word : " << secretWord << '\n';
   cin >> userGuess;
 
   if (i == 0){
